@@ -1,10 +1,16 @@
-function square(sideLen: number): Shape {
-    return {
-        sideLen,
-        computeArea: function (): number {
-            return sideLen * sideLen
-        }
-    }
+import { Shape } from './shape'
+
+interface Square extends Shape {
+  sideLen: number
 }
 
-export { square }
+function newSquare (sideLen: number): Square {
+  return {
+    sideLen,
+    computeArea: function (): number {
+      return sideLen * sideLen
+    }
+  }
+}
+
+export { Square, newSquare }
